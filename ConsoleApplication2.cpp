@@ -8,17 +8,17 @@ class Logger {
 public:
     Logger() {
         logFile.open("log.txt", ios::app);
-        log("Программа запущена.");
+        log("ГЏГ°Г®ГЈГ°Г Г¬Г¬Г  Г§Г ГЇГіГ№ГҐГ­Г .");
     }
     ~Logger() {
-        log("Программа завершена.");
+        log("ГЏГ°Г®ГЈГ°Г Г¬Г¬Г  Г§Г ГўГҐГ°ГёГҐГ­Г .");
         logFile.close();
     }
     void log(const string& message) {
         time_t now = time(0);
         char* timeStr = ctime(&now);
         string userName = "userName";
-        logFile << "Пользователь " << userName << " " << message << " в " << timeStr;
+        logFile << "ГЏГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј " << userName << " " << message << " Гў " << timeStr;
     }
 
 private:
@@ -28,11 +28,11 @@ private:
 class Student {
 public:
     Student(Logger& logger) : log(logger) {
-        log.log("Создан объект Student.");
+        log.log("Г‘Г®Г§Г¤Г Г­ Г®ГЎГєГҐГЄГІ Student.");
     }
 
     ~Student() {
-        log.log("Объект Student уничтожен.");
+        log.log("ГЋГЎГєГҐГЄГІ Student ГіГ­ГЁГ·ГІГ®Г¦ГҐГ­.");
     }
 private:
     Logger& log;
@@ -40,10 +40,10 @@ private:
 class Group {
 public:
     Group(Logger& logger) : log(logger) {
-        log.log("Создан объект Group.");
+        log.log("Г‘Г®Г§Г¤Г Г­ Г®ГЎГєГҐГЄГІ Group.");
     }
     ~Group() {
-        log.log("Объект Group уничтожен.");
+        log.log("ГЋГЎГєГҐГЄГІ Group ГіГ­ГЁГ·ГІГ®Г¦ГҐГ­.");
     }
 private:
     Logger& log;
